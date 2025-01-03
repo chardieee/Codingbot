@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="animated">
+            <a href="#" class="logo">Portfolio</a>
+
+            <nav class="navbar">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact-form">Contact</a>
+            </nav> 
+        </header>
+        
+        <section id="home" class="home animated">
+            <div class="home-detail">
+                <h3>Hello, It's Me</h3>
+                <font color="skyblue"><h1>Richard Nazario</h1></font>
+                <h3>And I'm a BSIT Student</h3>
+                <p>"I'm motivated by a profound passion for technology and a strong willingness to learn".</p>
+                <div class="download-social">
+                    <a href="#" class="btn">Download CV</a>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/richard.nazario.2024">
+                          <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                        
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-youtube-line"></i></a>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="home-img">
+                <div class="img-box">
+                    <img src="5620de3d-8a4a-482c-b4e5-fc68277795ce (1).jpg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-img">
+                <img src="44b82c06-1336-426d-9efd-fe7ea9dcc683 - Copy.jpg" alt="">
+                
+            </div>
+            <div class="about-content">
+                <h2 class="heading">About Me</h2>
+                <p>I am a passionate second-year BSIT student with a strong interest in technology and software development.I enjoy learning programming languages such as Python, HTML, CSS, and JavaScript and applying my knowledge to real-world projects.My goal is to continue building my skills and knowledge in IT to contribute meaningfully to the tech industry in the future.</p>
+            </div>
+            <div class="about-img-2">
+                <img src="ml.jpg" alt="">
+            </div>
+            <div class="about-content-2">
+                <p>I love playing Mobile Legends: Bang Bang because it helps me relieve stress.</p>
+            </div>
+
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h1>My <span>Skills</span></h1>
+                <div class="skills">
+                    <div class="technical-skills">
+                        <h2>Technical Skills</h2>
+                        <div class="skill">
+                            <span>HTML</span>
+                            <div class="bar"><div class="progress" style="width: 60%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span>CSS</span>
+                            <div class="bar"><div class="progress" style="width: 30%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span>JavaScript</span>
+                            <div class="bar"><div class="progress" style="width: 20%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span>Python</span>
+                            <div class="bar"><div class="progress" style="width: 50%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span>React</span>
+                            <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="professional-skills">
+                        <h2>Professional Skills</h2>
+                        
+                        <div class="circle-skill">
+                            <div class="circle" style="--percentage: 65;"></div>
+                            <span>Communication</span>
+                        </div>
+                        <div class="circle-skill">
+                            <div class="circle" style="--percentage: 75;"></div>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="circle-skill">
+                            <div class="circle" style="--percentage: 85;"></div>
+                            <span>Teamwork</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-form" id="contact-form">
+            <h2 class="contact-me">Contact Me</h2>
+
+            <form action="#">
+                
+                <div class="input-box">
+                    <input type="text" placeholder="full Name">
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <div class="input-box">
+                    <input type="number" placeholder="Phone Number">
+                    <input type="text" placeholder="Subject">
+                </div>
+
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="btn-1">
+            </form>
+           
+        </section>
+    </div>
+
+    <script src="JS/main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
