@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url(cover.jpg);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <style>
+ 
+
+.wave {
+    background: rgba(166, 160, 160, 0.25);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+        .problem-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 30%;
+            border-radius: 10px;
+        }
+        
+        .problem-label {
+            width: 100px;
+            font-weight: bold;
+        }
+        .h1{
+            text-align: center;
+        }
+        .h4{
+            text-align: right;
+            padding: 50px;
+           
+        }
+        .container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            padding: 5 20px;
+            margin-left: 10px;
+            background-image: conic-gradient(rgb(117, 173, 241),rgb(214, 37, 37), rgb(237, 237, 58),rgb(206, 95, 114), rgb(215, 37, 215));
+            width: 300px;
+            border-radius: 10px;
+            padding: 3px;
+ 
+        }
+        .container.open {
+            max-height: 500px;
+            padding: 20px;
+            opacity: 1;
+        }
+        .problem-title {
+            margin: 0 0 10px;
+        }
+        button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+       <div class="wave"></div>
+       <div class="wave"></div>
+       <div class="wave"></div>
+    </div>
+
+    <div class="h4">
+        <h4>Name: Nazario, Richard V.</h4>
+        <h4>Section: BSIT-2B</h4>
+
+
+    </div>
+    <div class="h1">
+    <h1>Assignment 2</h1>
+
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 1:</div>
+        <button id="toggleProblem1" onclick="toggleContainer('container1')">Show</button>
+        <div id="container1" class="container">
+            <h3 class="problem-title">Problem 1: Calculate the Area of a Triangle</h3>
+            <form id="triangle-form">
+                <label for="base">Base of the triangle:</label>
+                <input type="number" id="base" required>
+                <br><br>
+
+                <label for="height">Height of the triangle:</label>
+                <input type="number" id="height" required>
+                <br><br>
+
+                <button type="button" onclick="calculateArea()">Calculate Area</button>
+            </form>
+            <p id="result1"></p>
+        </div>
+    </div>
+
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 2:</div>
+        <button id="toggleProblem2" onclick="toggleContainer('container2')">Show</button>
+        <div id="container2" class="container">
+            <h3 class="problem-title">Problem 2: Calculate the Average</h3>
+            <form id="average-form">
+                <input type="number" id="num1" required placeholder="Enter number 1">
+                <input type="number" id="num2" required placeholder="Enter number 2">
+                <input type="number" id="num3" required placeholder="Enter number 3">
+                <input type="number" id="num4" required placeholder="Enter number 4">
+                <input type="number" id="num5" required placeholder="Enter number 5">
+                <br><br>
+                <button type="button" onclick="calculateAverage()">Calculate Average</button>
+            </form>
+            <p id="result2"></p>
+        </div>
+    </div>
+
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 3:</div>
+        <button id="toggleProblem3" onclick="toggleContainer('container3')">Show</button>
+        <div id="container3" class="container">
+            <h3 class="problem-title">Problem 3: Convert Celsius to Fahrenheit</h3>
+            <form id="temp-form">
+                <label for="celsius">Temperature in Celsius:</label>
+                <input type="number" id="celsius" required>
+                <br><br>
+                <button type="button" onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+            </form>
+            <p id="result3"></p>
+        </div>
+    </div>
+
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 4:</div>
+        <button id="toggleProblem4" onclick="toggleContainer('container4')">Show</button>
+        <div id="container4" class="container">
+            <h3 class="problem-title">Problem 4: Display Stars Pattern</h3>
+            <form id="pattern-form">
+                <label for="numStars">Enter number of rows:</label>
+                <input type="number" id="numStars" required>
+                <br><br>
+                <button type="button" onclick="displayPattern()">Display Pattern</button>
+            </form>
+            <pre id="result4"></pre>
+        </div>
+    </div>
+
+    <script>
+        function toggleContainer(containerId) {
+            const container = document.getElementById(containerId);
+            const button = document.querySelector(`button[onclick="toggleContainer('${containerId}')"]`);
+
+            if (container.classList.contains('open')) {
+                container.classList.remove('open');
+                button.innerText = 'Show';
+            } else {
+                container.classList.add('open');
+                button.innerText = 'Hide';
+            }
+        }
+
+        function calculateArea() {
+            const base = parseFloat(document.getElementById('base').value);
+            const height = parseFloat(document.getElementById('height').value);
+
+            if (base <= 0 || height <= 0 || isNaN(base) || isNaN(height)) {
+                document.getElementById('result1').innerText = 'Please enter valid positive numbers for base and height.';
+                return;
+            }
+
+            const area = 0.5 * base * height;
+            document.getElementById('result1').innerText = `The area of the triangle is: ${area}`;
+        }
+
+        function calculateAverage() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const num3 = parseFloat(document.getElementById('num3').value);
+            const num4 = parseFloat(document.getElementById('num4').value);
+            const num5 = parseFloat(document.getElementById('num5').value);
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                document.getElementById('result2').innerText = 'Please enter valid numbers for all fields.';
+                return;
+            }
+
+            const average = (num1 + num2 + num3 + num4 + num5) / 5;
+            document.getElementById('result2').innerText = `The average is: ${average}`;
+        }
+
+        function convertToFahrenheit() {
+            const celsius = parseFloat(document.getElementById('celsius').value);
+
+            if (isNaN(celsius)) {
+                document.getElementById('result3').innerText = 'Please enter a valid number for Celsius.';
+                return;
+            }
+
+            const fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById('result3').innerText = `${celsius}°C is equal to ${fahrenheit}°F`;
+        }
+        
+
+        function displayPattern() {
+            const numStars = parseInt(document.getElementById('numStars').value);
+
+            if (numStars <= 0 || isNaN(numStars)) {
+                document.getElementById('result4').innerText = 'Please enter a valid positive number.';
+                return;
+            }
+
+            let pattern = '';
+            for (let i = 1; i <= numStars; i++) {
+                const spaces =' '.repeat(numStars + i);
+                pattern += spaces + '*'.repeat(i) + '\n';
+            }
+
+            document.getElementById('result4').innerText = pattern;
+        }
+    </script>
+</body>
+</html>
+
+
